@@ -1,0 +1,273 @@
+{
+    "configs": {
+        "/model/model.0/Gemm": {
+            "onnx::Gemm_0": {
+                "bit_width": 8,
+                "policy": {
+                    "PER_TENSOR": true,
+                    "PER_CHANNEL": false,
+                    "LINEAR": true,
+                    "FLOATING": false,
+                    "SYMMETRICAL": true,
+                    "ASYMMETRICAL": false,
+                    "POWER_OF_2": true,
+                    "DYNAMIC": false
+                },
+                "state": "ACTIVATED",
+                "quant_min": -128,
+                "quant_max": 127,
+                "hash": 4238116394,
+                "dominator": 4238116394
+            },
+            "model.0.weight": {
+                "bit_width": 8,
+                "policy": {
+                    "PER_TENSOR": true,
+                    "PER_CHANNEL": false,
+                    "LINEAR": true,
+                    "FLOATING": false,
+                    "SYMMETRICAL": true,
+                    "ASYMMETRICAL": false,
+                    "POWER_OF_2": true,
+                    "DYNAMIC": false
+                },
+                "state": "ACTIVATED",
+                "quant_min": -128,
+                "quant_max": 127,
+                "hash": 812790853,
+                "dominator": 812790853
+            },
+            "model.0.bias": {
+                "bit_width": 32,
+                "policy": {
+                    "PER_TENSOR": true,
+                    "PER_CHANNEL": false,
+                    "LINEAR": true,
+                    "FLOATING": false,
+                    "SYMMETRICAL": true,
+                    "ASYMMETRICAL": false,
+                    "POWER_OF_2": true,
+                    "DYNAMIC": false
+                },
+                "state": "PASSIVE",
+                "quant_min": -2147483648,
+                "quant_max": 2147483647,
+                "hash": 1635866100,
+                "dominator": 1635866100
+            },
+            "/model/model.1/Relu_output_0": {
+                "bit_width": 8,
+                "policy": {
+                    "PER_TENSOR": true,
+                    "PER_CHANNEL": false,
+                    "LINEAR": true,
+                    "FLOATING": false,
+                    "SYMMETRICAL": true,
+                    "ASYMMETRICAL": false,
+                    "POWER_OF_2": true,
+                    "DYNAMIC": false
+                },
+                "state": "ACTIVATED",
+                "quant_min": -128,
+                "quant_max": 127,
+                "hash": 2948086425,
+                "dominator": 2948086425
+            }
+        },
+        "/model/model.2/Gemm": {
+            "/model/model.1/Relu_output_0": {
+                "bit_width": 8,
+                "policy": {
+                    "PER_TENSOR": true,
+                    "PER_CHANNEL": false,
+                    "LINEAR": true,
+                    "FLOATING": false,
+                    "SYMMETRICAL": true,
+                    "ASYMMETRICAL": false,
+                    "POWER_OF_2": true,
+                    "DYNAMIC": false
+                },
+                "state": "OVERLAPPED",
+                "quant_min": -128,
+                "quant_max": 127,
+                "hash": 2421789432,
+                "dominator": 2948086425
+            },
+            "model.2.weight": {
+                "bit_width": 8,
+                "policy": {
+                    "PER_TENSOR": true,
+                    "PER_CHANNEL": false,
+                    "LINEAR": true,
+                    "FLOATING": false,
+                    "SYMMETRICAL": true,
+                    "ASYMMETRICAL": false,
+                    "POWER_OF_2": true,
+                    "DYNAMIC": false
+                },
+                "state": "ACTIVATED",
+                "quant_min": -128,
+                "quant_max": 127,
+                "hash": 3540764123,
+                "dominator": 3540764123
+            },
+            "model.2.bias": {
+                "bit_width": 32,
+                "policy": {
+                    "PER_TENSOR": true,
+                    "PER_CHANNEL": false,
+                    "LINEAR": true,
+                    "FLOATING": false,
+                    "SYMMETRICAL": true,
+                    "ASYMMETRICAL": false,
+                    "POWER_OF_2": true,
+                    "DYNAMIC": false
+                },
+                "state": "PASSIVE",
+                "quant_min": -2147483648,
+                "quant_max": 2147483647,
+                "hash": 4179786034,
+                "dominator": 4179786034
+            },
+            "/model/model.3/Relu_output_0": {
+                "bit_width": 8,
+                "policy": {
+                    "PER_TENSOR": true,
+                    "PER_CHANNEL": false,
+                    "LINEAR": true,
+                    "FLOATING": false,
+                    "SYMMETRICAL": true,
+                    "ASYMMETRICAL": false,
+                    "POWER_OF_2": true,
+                    "DYNAMIC": false
+                },
+                "state": "ACTIVATED",
+                "quant_min": -128,
+                "quant_max": 127,
+                "hash": 2721590031,
+                "dominator": 2721590031
+            }
+        },
+        "/model/model.4/Gemm": {
+            "/model/model.3/Relu_output_0": {
+                "bit_width": 8,
+                "policy": {
+                    "PER_TENSOR": true,
+                    "PER_CHANNEL": false,
+                    "LINEAR": true,
+                    "FLOATING": false,
+                    "SYMMETRICAL": true,
+                    "ASYMMETRICAL": false,
+                    "POWER_OF_2": true,
+                    "DYNAMIC": false
+                },
+                "state": "OVERLAPPED",
+                "quant_min": -128,
+                "quant_max": 127,
+                "hash": 2249922966,
+                "dominator": 2721590031
+            },
+            "model.4.weight": {
+                "bit_width": 8,
+                "policy": {
+                    "PER_TENSOR": true,
+                    "PER_CHANNEL": false,
+                    "LINEAR": true,
+                    "FLOATING": false,
+                    "SYMMETRICAL": true,
+                    "ASYMMETRICAL": false,
+                    "POWER_OF_2": true,
+                    "DYNAMIC": false
+                },
+                "state": "ACTIVATED",
+                "quant_min": -128,
+                "quant_max": 127,
+                "hash": 3982699009,
+                "dominator": 3982699009
+            },
+            "model.4.bias": {
+                "bit_width": 32,
+                "policy": {
+                    "PER_TENSOR": true,
+                    "PER_CHANNEL": false,
+                    "LINEAR": true,
+                    "FLOATING": false,
+                    "SYMMETRICAL": true,
+                    "ASYMMETRICAL": false,
+                    "POWER_OF_2": true,
+                    "DYNAMIC": false
+                },
+                "state": "PASSIVE",
+                "quant_min": -2147483648,
+                "quant_max": 2147483647,
+                "hash": 220751040,
+                "dominator": 220751040
+            },
+            "11": {
+                "bit_width": 8,
+                "policy": {
+                    "PER_TENSOR": true,
+                    "PER_CHANNEL": false,
+                    "LINEAR": true,
+                    "FLOATING": false,
+                    "SYMMETRICAL": true,
+                    "ASYMMETRICAL": false,
+                    "POWER_OF_2": true,
+                    "DYNAMIC": false
+                },
+                "state": "ACTIVATED",
+                "quant_min": -128,
+                "quant_max": 127,
+                "hash": 3249565827,
+                "dominator": 3249565827
+            }
+        }
+    },
+    "dispatchings": {
+        "/model/model.0/Gemm": "ESPDL_INT8",
+        "/model/model.2/Gemm": "ESPDL_INT8",
+        "/model/model.4/Gemm": "ESPDL_INT8"
+    },
+    "values": {
+        "4238116394": {
+            "scale": 0.03125,
+            "zero_point": 0.0
+        },
+        "812790853": {
+            "scale": 0.00390625,
+            "zero_point": 0.0
+        },
+        "1635866100": {
+            "scale": 0.0001220703125,
+            "zero_point": 0.0
+        },
+        "2948086425": {
+            "scale": 0.0625,
+            "zero_point": 0.0
+        },
+        "3540764123": {
+            "scale": 0.00390625,
+            "zero_point": 0.0
+        },
+        "4179786034": {
+            "scale": 0.000244140625,
+            "zero_point": 0.0
+        },
+        "2721590031": {
+            "scale": 0.125,
+            "zero_point": 0.0
+        },
+        "3982699009": {
+            "scale": 0.00390625,
+            "zero_point": 0.0
+        },
+        "220751040": {
+            "scale": 0.00048828125,
+            "zero_point": 0.0
+        },
+        "3249565827": {
+            "scale": 0.25,
+            "zero_point": 0.0
+        }
+    }
+}
