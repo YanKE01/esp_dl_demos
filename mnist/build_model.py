@@ -1,3 +1,4 @@
+import torch
 import torch.nn as nn
 
 
@@ -18,7 +19,7 @@ class Net(nn.Module):
             nn.ReLU(),
 
             nn.Flatten(),
-            nn.Linear(in_features=7 * 7 * 64, out_features=128),
+            nn.Linear(in_features=7 * 6 * 64, out_features=128),
             nn.ReLU(),
             nn.Linear(in_features=128, out_features=10),
             nn.Softmax(dim=1)
@@ -27,3 +28,4 @@ class Net(nn.Module):
     def forward(self, x):
         output = self.model(x)
         return output
+

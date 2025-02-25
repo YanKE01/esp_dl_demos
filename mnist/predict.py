@@ -1,14 +1,19 @@
 import torch
 import torchvision
+from PIL import Image
 
 from build_model import *
 
 if __name__ == '__main__':
     device = "cuda:0" if torch.cuda.is_available() else "cpu"
 
-    transform = torchvision.transforms.Compose([torchvision.transforms.ToTensor(),
-                                                torchvision.transforms.Normalize(mean=[0.5], std=[0.5])])
-
+    transform = torchvision.transforms.Compose([
+        torchvision.transforms.Resize((30, 25)),  # 调整大小
+        torchvision.transforms.RandomAffine(degrees=30, translate=(0.1, 0.1), scale=(0.9, 1.1)),
+        torchvision.transforms.Lambda(lambda x: x.convert('L')),  # 转换为灰度图
+        torchvision.transforms.Lambda(lambda x: Image.eval(x, lambda px: 255 if px > 127.5 else 0)),  # 二值化处理
+        torchvision.transforms.ToTensor(),  # 转换为tensor
+    ])
     testData = torchvision.datasets.MNIST("./dataset", train=False, transform=transform)
     testDataLoader = torch.utils.data.DataLoader(dataset=testData, batch_size=256, shuffle=False)
 
