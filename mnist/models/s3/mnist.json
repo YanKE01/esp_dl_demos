@@ -16,8 +16,8 @@
                 "state": "ACTIVATED",
                 "quant_min": -128,
                 "quant_max": 127,
-                "hash": 2588167787,
-                "dominator": 2588167787
+                "hash": 1831636289,
+                "dominator": 1831636289
             },
             "model.0.weight": {
                 "bit_width": 8,
@@ -34,8 +34,8 @@
                 "state": "ACTIVATED",
                 "quant_min": -128,
                 "quant_max": 127,
-                "hash": 1097801602,
-                "dominator": 1097801602
+                "hash": 904477440,
+                "dominator": 904477440
             },
             "model.0.bias": {
                 "bit_width": 20,
@@ -52,8 +52,8 @@
                 "state": "PASSIVE",
                 "quant_min": -524288,
                 "quant_max": 524287,
-                "hash": 515754045,
-                "dominator": 515754045
+                "hash": 51834307,
+                "dominator": 51834307
             },
             "/model/model.1/Relu_output_0": {
                 "bit_width": 8,
@@ -70,8 +70,8 @@
                 "state": "ACTIVATED",
                 "quant_min": -128,
                 "quant_max": 127,
-                "hash": 335853798,
-                "dominator": 335853798
+                "hash": 3217083332,
+                "dominator": 3217083332
             }
         },
         "/model/model.2/MaxPool": {
@@ -90,8 +90,8 @@
                 "state": "OVERLAPPED",
                 "quant_min": -128,
                 "quant_max": 127,
-                "hash": 803703825,
-                "dominator": 335853798
+                "hash": 1515211639,
+                "dominator": 3217083332
             },
             "/model/model.2/MaxPool_output_0": {
                 "bit_width": 8,
@@ -108,8 +108,8 @@
                 "state": "OVERLAPPED",
                 "quant_min": -128,
                 "quant_max": 127,
-                "hash": 2513927824,
-                "dominator": 335853798
+                "hash": 665213022,
+                "dominator": 3217083332
             }
         },
         "/model/model.3/Conv": {
@@ -128,8 +128,8 @@
                 "state": "OVERLAPPED",
                 "quant_min": -128,
                 "quant_max": 127,
-                "hash": 4159595283,
-                "dominator": 335853798
+                "hash": 3251015081,
+                "dominator": 3217083332
             },
             "model.3.weight": {
                 "bit_width": 8,
@@ -146,8 +146,8 @@
                 "state": "ACTIVATED",
                 "quant_min": -128,
                 "quant_max": 127,
-                "hash": 2481291658,
-                "dominator": 2481291658
+                "hash": 560912840,
+                "dominator": 560912840
             },
             "model.3.bias": {
                 "bit_width": 20,
@@ -164,8 +164,8 @@
                 "state": "PASSIVE",
                 "quant_min": -524288,
                 "quant_max": 524287,
-                "hash": 3212624421,
-                "dominator": 3212624421
+                "hash": 2601202027,
+                "dominator": 2601202027
             },
             "/model/model.4/Relu_output_0": {
                 "bit_width": 8,
@@ -182,8 +182,8 @@
                 "state": "ACTIVATED",
                 "quant_min": -128,
                 "quant_max": 127,
-                "hash": 3088334190,
-                "dominator": 3088334190
+                "hash": 3621685516,
+                "dominator": 3621685516
             }
         },
         "/model/model.5/MaxPool": {
@@ -202,8 +202,8 @@
                 "state": "OVERLAPPED",
                 "quant_min": -128,
                 "quant_max": 127,
-                "hash": 4035255929,
-                "dominator": 3088334190
+                "hash": 806761375,
+                "dominator": 3621685516
             },
             "/model/model.5/MaxPool_output_0": {
                 "bit_width": 8,
@@ -220,8 +220,8 @@
                 "state": "OVERLAPPED",
                 "quant_min": -128,
                 "quant_max": 127,
-                "hash": 3860490072,
-                "dominator": 3088334190
+                "hash": 4034346982,
+                "dominator": 3621685516
             }
         },
         "/model/model.6/Conv": {
@@ -240,8 +240,8 @@
                 "state": "OVERLAPPED",
                 "quant_min": -128,
                 "quant_max": 127,
-                "hash": 2270349499,
-                "dominator": 3088334190
+                "hash": 2607544081,
+                "dominator": 3621685516
             },
             "model.6.weight": {
                 "bit_width": 8,
@@ -258,8 +258,8 @@
                 "state": "ACTIVATED",
                 "quant_min": -128,
                 "quant_max": 127,
-                "hash": 3249598610,
-                "dominator": 3249598610
+                "hash": 3233168784,
+                "dominator": 3233168784
             },
             "model.6.bias": {
                 "bit_width": 20,
@@ -276,8 +276,8 @@
                 "state": "PASSIVE",
                 "quant_min": -524288,
                 "quant_max": 524287,
-                "hash": 2360382733,
-                "dominator": 2360382733
+                "hash": 3742246419,
+                "dominator": 3742246419
             },
             "/model/model.7/Relu_output_0": {
                 "bit_width": 8,
@@ -294,8 +294,8 @@
                 "state": "ACTIVATED",
                 "quant_min": -128,
                 "quant_max": 127,
-                "hash": 1226628854,
-                "dominator": 1226628854
+                "hash": 2564528980,
+                "dominator": 2564528980
             }
         },
         "/model/model.8/Flatten": {
@@ -314,8 +314,8 @@
                 "state": "OVERLAPPED",
                 "quant_min": -128,
                 "quant_max": 127,
-                "hash": 1827363297,
-                "dominator": 1226628854
+                "hash": 1557273799,
+                "dominator": 2564528980
             },
             "/model/model.8/Flatten_output_0": {
                 "bit_width": 8,
@@ -332,8 +332,8 @@
                 "state": "OVERLAPPED",
                 "quant_min": -128,
                 "quant_max": 127,
-                "hash": 1256674592,
-                "dominator": 1226628854
+                "hash": 262808686,
+                "dominator": 2564528980
             }
         },
         "/model/model.9/Gemm": {
@@ -352,8 +352,8 @@
                 "state": "OVERLAPPED",
                 "quant_min": -128,
                 "quant_max": 127,
-                "hash": 2439847779,
-                "dominator": 1226628854
+                "hash": 1881106809,
+                "dominator": 2564528980
             },
             "model.9.weight": {
                 "bit_width": 8,
@@ -370,8 +370,8 @@
                 "state": "ACTIVATED",
                 "quant_min": -128,
                 "quant_max": 127,
-                "hash": 2791214234,
-                "dominator": 2791214234
+                "hash": 1144489560,
+                "dominator": 1144489560
             },
             "model.9.bias": {
                 "bit_width": 20,
@@ -388,8 +388,8 @@
                 "state": "PASSIVE",
                 "quant_min": -524288,
                 "quant_max": 524287,
-                "hash": 3492929781,
-                "dominator": 3492929781
+                "hash": 2251779003,
+                "dominator": 2251779003
             },
             "/model/model.10/Relu_output_0": {
                 "bit_width": 8,
@@ -406,11 +406,11 @@
                 "state": "ACTIVATED",
                 "quant_min": -128,
                 "quant_max": 127,
-                "hash": 952483198,
-                "dominator": 952483198
+                "hash": 3266978460,
+                "dominator": 3266978460
             }
         },
-        "/model/model.11/Gemm": {
+        "/model/model.12/Gemm": {
             "/model/model.10/Relu_output_0": {
                 "bit_width": 8,
                 "policy": {
@@ -426,10 +426,10 @@
                 "state": "OVERLAPPED",
                 "quant_min": -128,
                 "quant_max": 127,
-                "hash": 346349129,
-                "dominator": 952483198
+                "hash": 2432542447,
+                "dominator": 3266978460
             },
-            "model.11.weight": {
+            "model.12.weight": {
                 "bit_width": 8,
                 "policy": {
                     "PER_TENSOR": true,
@@ -444,10 +444,10 @@
                 "state": "ACTIVATED",
                 "quant_min": -128,
                 "quant_max": 127,
-                "hash": 673081320,
-                "dominator": 673081320
+                "hash": 2723292662,
+                "dominator": 2723292662
             },
-            "model.11.bias": {
+            "model.12.bias": {
                 "bit_width": 20,
                 "policy": {
                     "PER_TENSOR": true,
@@ -462,10 +462,10 @@
                 "state": "PASSIVE",
                 "quant_min": -524288,
                 "quant_max": 524287,
-                "hash": 3541894923,
-                "dominator": 3541894923
+                "hash": 1562871009,
+                "dominator": 1562871009
             },
-            "/model/model.11/Gemm_output_0": {
+            "/model/model.12/Gemm_output_0": {
                 "bit_width": 8,
                 "policy": {
                     "PER_TENSOR": true,
@@ -480,12 +480,12 @@
                 "state": "ACTIVATED",
                 "quant_min": -128,
                 "quant_max": 127,
-                "hash": 1372550562,
-                "dominator": 1372550562
+                "hash": 4137604128,
+                "dominator": 4137604128
             }
         },
-        "/model/model.12/Softmax": {
-            "/model/model.11/Gemm_output_0": {
+        "/model/model.13/Softmax": {
+            "/model/model.12/Gemm_output_0": {
                 "bit_width": 8,
                 "policy": {
                     "PER_TENSOR": true,
@@ -500,8 +500,8 @@
                 "state": "OVERLAPPED",
                 "quant_min": -128,
                 "quant_max": 127,
-                "hash": 2262648285,
-                "dominator": 1372550562
+                "hash": 3372393059,
+                "dominator": 4137604128
             },
             "23": {
                 "bit_width": 8,
@@ -518,8 +518,8 @@
                 "state": "FP32",
                 "quant_min": -128,
                 "quant_max": 127,
-                "hash": 62161196,
-                "dominator": 62161196
+                "hash": 1063912346,
+                "dominator": 1063912346
             }
         },
         "PPQ_Operation_0": {
@@ -538,8 +538,8 @@
                 "state": "OVERLAPPED",
                 "quant_min": -128,
                 "quant_max": 127,
-                "hash": 1827363297,
-                "dominator": 1226628854
+                "hash": 1557273799,
+                "dominator": 2564528980
             },
             "PPQ_Variable_0": {
                 "bit_width": 8,
@@ -556,8 +556,8 @@
                 "state": "OVERLAPPED",
                 "quant_min": -128,
                 "quant_max": 127,
-                "hash": 1827363297,
-                "dominator": 1226628854
+                "hash": 1557273799,
+                "dominator": 2564528980
             }
         }
     },
@@ -569,73 +569,73 @@
         "/model/model.6/Conv": "ESPDL_S3_INT8",
         "/model/model.8/Flatten": "ESPDL_S3_INT8",
         "/model/model.9/Gemm": "ESPDL_S3_INT8",
-        "/model/model.11/Gemm": "ESPDL_S3_INT8",
-        "/model/model.12/Softmax": "ESPDL_S3_INT8",
+        "/model/model.12/Gemm": "ESPDL_S3_INT8",
+        "/model/model.13/Softmax": "ESPDL_S3_INT8",
         "PPQ_Operation_0": "ESPDL_S3_INT8"
     },
     "values": {
-        "2588167787": {
+        "1831636289": {
             "scale": 0.0078125,
             "zero_point": 0.0
         },
-        "1097801602": {
+        "904477440": {
             "scale": 0.0078125,
             "zero_point": 0.0
         },
-        "515754045": {
+        "51834307": {
             "scale": 6.103515625e-05,
             "zero_point": 0.0
         },
-        "335853798": {
-            "scale": 0.015625,
-            "zero_point": 0.0
-        },
-        "2481291658": {
+        "3217083332": {
             "scale": 0.0078125,
             "zero_point": 0.0
         },
-        "3212624421": {
-            "scale": 0.0001220703125,
-            "zero_point": 0.0
-        },
-        "3088334190": {
-            "scale": 0.0625,
-            "zero_point": 0.0
-        },
-        "3249598610": {
+        "560912840": {
             "scale": 0.0078125,
             "zero_point": 0.0
         },
-        "2360382733": {
+        "2601202027": {
+            "scale": 6.103515625e-05,
+            "zero_point": 0.0
+        },
+        "3621685516": {
+            "scale": 0.03125,
+            "zero_point": 0.0
+        },
+        "3233168784": {
+            "scale": 0.0078125,
+            "zero_point": 0.0
+        },
+        "3742246419": {
+            "scale": 0.000244140625,
+            "zero_point": 0.0
+        },
+        "2564528980": {
+            "scale": 0.125,
+            "zero_point": 0.0
+        },
+        "1144489560": {
+            "scale": 0.00390625,
+            "zero_point": 0.0
+        },
+        "2251779003": {
             "scale": 0.00048828125,
             "zero_point": 0.0
         },
-        "1226628854": {
-            "scale": 0.25,
+        "3266978460": {
+            "scale": 0.5,
             "zero_point": 0.0
         },
-        "2791214234": {
-            "scale": 0.0078125,
+        "2723292662": {
+            "scale": 0.00390625,
             "zero_point": 0.0
         },
-        "3492929781": {
+        "1562871009": {
             "scale": 0.001953125,
             "zero_point": 0.0
         },
-        "952483198": {
-            "scale": 2.0,
-            "zero_point": 0.0
-        },
-        "673081320": {
-            "scale": 0.0078125,
-            "zero_point": 0.0
-        },
-        "3541894923": {
-            "scale": 0.015625,
-            "zero_point": 0.0
-        },
-        "1372550562": {
-            "scale": 4.0,
+        "4137604128": {
+            "scale": 1.0,
             "zero_point": 0.0
         }
     }
