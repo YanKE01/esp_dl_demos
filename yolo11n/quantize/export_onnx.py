@@ -144,4 +144,4 @@ for m in model.modules():
     if isinstance(m, Detect):
         m.forward = ESP_Detect.forward.__get__(m)
 
-model.export(format="onnx", simplify=True, opset=13, dynamic=False, imgsz=192)
+model.export(format="onnx", simplify=True, opset=13, dynamic=False, imgsz=256)

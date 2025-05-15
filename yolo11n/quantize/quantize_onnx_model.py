@@ -79,7 +79,7 @@ def quant_yolo11n(imgsz):
     # default setting
     quant_setting = QuantizationSettingFactory.espdl_setting()
 
-    """
+
     # Mixed-Precision + Horizontal Layer Split Pass Quantization
 
     quant_setting.dispatching_table.append(
@@ -101,7 +101,7 @@ def quant_yolo11n(imgsz):
     quant_setting.weight_split_setting.value_threshold = 1.5 #1.5
     quant_setting.weight_split_setting.interested_layers = ['/model.0/conv/Conv',
                                                             '/model.1/conv/Conv' ]
-    """
+
 
     quant_ppq_graph = espdl_quantize_onnx(
         onnx_import_file=ONNX_PATH,
@@ -124,4 +124,4 @@ def quant_yolo11n(imgsz):
 
 
 if __name__ == "__main__":
-    quant_yolo11n(imgsz=192)
+    quant_yolo11n(imgsz=256)
