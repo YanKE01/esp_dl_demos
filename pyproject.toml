@@ -1,0 +1,18 @@
+[project]
+name = "esp-dl-demos"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.8"
+dependencies = [
+    "esp-ppq",
+    "matplotlib>=3.7.5",
+    "onnxruntime<1.20",
+    "opencv-python>=4.13.0.92",
+    "pandas>=2.0.3",
+    "torch==2.2.2",
+    "torchvision==0.17.2",
+]
+
+[tool.uv.sources]
+esp-ppq = { git = "https://github.com/espressif/esp-ppq.git", rev = "b586f3f1cdd0a32efc7f18c582dc70541df0dc91" }
