@@ -1,5 +1,5 @@
 from ultralytics import YOLO
-from ultralytics.nn.modules import Detect, Attention
+from ultralytics.nn.modules import Pose, Attention
 from ultralytics.engine.exporter import Exporter, try_export, arange_patch
 from ultralytics.utils import LOGGER, __version__, colorstr
 from ultralytics.utils.checks import check_requirements
@@ -8,10 +8,11 @@ import torch
 import onnx
 
 
-class ESP_Detect(Detect):
+class ESP_Pose(Pose):
     def forward(self, x):
-        """Returns predicted bounding boxes and class probabilities respectively."""
         # self.nl = 3
+        """Perform forward pass through YOLO model and return predictions."""
+
         box0 = self.cv2[0](x[0])
         score0 = self.cv3[0](x[0])
 
@@ -21,7 +22,11 @@ class ESP_Detect(Detect):
         box2 = self.cv2[2](x[2])
         score2 = self.cv3[2](x[2])
 
-        return box0, score0, box1, score1, box2, score2
+        kpt0 = self.cv4[0](x[0])
+        kpt1 = self.cv4[1](x[1])
+        kpt2 = self.cv4[2](x[2])
+
+        return box0, score0, box1, score1, box2, score2, kpt0, kpt1, kpt2
 
 
 class ESP_Attention(Attention):
@@ -50,7 +55,7 @@ class ESP_Attention(Attention):
         return x
 
 
-class ESP_Detect_Exporter(Exporter):
+class ESP_Pose_Exporter(Exporter):
     """
     adapted from ultralytics for detection task
     """
@@ -72,7 +77,17 @@ class ESP_Detect_Exporter(Exporter):
             f"\n{prefix} starting export with onnx {onnx.__version__} opset {opset_version}..."
         )
         f = str(self.file.with_suffix(".onnx"))
-        output_names = ["box0", "score0", "box1", "score1", "box2", "score2"]
+        output_names = [
+            "box0",
+            "score0",
+            "box1",
+            "score1",
+            "box2",
+            "score2",
+            "kpt0",
+            "kpt1",
+            "kpt2",
+        ]
         dynamic = (
             self.args.dynamic
         )  # case 1: deploy model on ESP32, dynamic=False; case 2: QAT gt onnx for inference, dynamic=True
@@ -88,7 +103,7 @@ class ESP_Detect_Exporter(Exporter):
                 f,
                 verbose=False,
                 opset_version=opset_version,
-                do_constant_folding=False,
+                do_constant_folding=True,  # WARNING: DNN inference with torch>=1.12 may require do_constant_folding=False
                 input_names=["images"],
                 output_names=output_names,
                 dynamic_axes=dynamic or None,
@@ -132,16 +147,16 @@ class ESP_YOLO(YOLO):
             "verbose": False,
         }
         args = {**self.overrides, **custom, **kwargs, "mode": "export"}
-        return ESP_Detect_Exporter(overrides=args, _callbacks=self.callbacks)(
+        return ESP_Pose_Exporter(overrides=args, _callbacks=self.callbacks)(
             model=self.model
         )
 
 
-model = ESP_YOLO("yolo11n.pt")
+model = ESP_YOLO("yolo11n-pose.pt")
 for m in model.modules():
     if isinstance(m, Attention):
         m.forward = ESP_Attention.forward.__get__(m)
-    if isinstance(m, Detect):
-        m.forward = ESP_Detect.forward.__get__(m)
+    if isinstance(m, Pose):
+        m.forward = ESP_Pose.forward.__get__(m)
 
 model.export(format="onnx", simplify=True, opset=13, dynamic=False, imgsz=160)

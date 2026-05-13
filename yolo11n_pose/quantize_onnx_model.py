@@ -44,7 +44,7 @@ def report_hook(blocknum, blocksize, total):
     print(f"\rDownloading calibration dataset: {percent:.2f}%", end="")
 
 
-def quant_yolo11n(imgsz):
+def quant_yolo11n_pose(imgsz):
     BATCH_SIZE = 32
     INPUT_SHAPE = [3, imgsz, imgsz]
     DEVICE = "cpu"
@@ -52,20 +52,20 @@ def quant_yolo11n(imgsz):
     NUM_OF_BITS = 8
     script_dir = os.path.dirname(os.path.abspath(__file__))
     ONNX_PATH = os.path.join(
-        script_dir, "./yolo11n.onnx"
+        script_dir, "./yolo11n-pose.onnx"
     )
     ESPDL_MODLE_PATH = os.path.join(
         script_dir,
-        "./models/p4/coco_detect_yolo11n_s8_v1.espdl",
+        "./models/p4/coco_pose_yolo11n_pose_s8_v1.espdl",
     )
 
-    yolo11n_caib_url = "https://dl.espressif.com/public/calib_yolo11n.zip"
-    CALIB_DIR = "calib_yolo11n"
+    yolo11n_pose_caib_url = "https://dl.espressif.com/public/calib_yolo11n-pose.zip"
+    CALIB_DIR = "calib_yolo11n-pose"
     urllib.request.urlretrieve(
-        yolo11n_caib_url, "calib_yolo11n.zip", reporthook=report_hook
+        yolo11n_pose_caib_url, "calib_yolo11n-pose.zip", reporthook=report_hook
     )
 
-    with zipfile.ZipFile("calib_yolo11n.zip", "r") as zip_file:
+    with zipfile.ZipFile("calib_yolo11n-pose.zip", "r") as zip_file:
         zip_file.extractall("./")
 
     model = onnx.load(ONNX_PATH)
@@ -85,30 +85,6 @@ def quant_yolo11n(imgsz):
 
     # default setting
     quant_setting = QuantizationSettingFactory.espdl_setting()
-
-    """
-    # Mixed-Precision + Horizontal Layer Split Pass Quantization
-
-    quant_setting.dispatching_table.append(
-        operation='/model.2/cv2/conv/Conv',
-        platform=get_target_platform(TARGET, 16)
-    )
-    quant_setting.dispatching_table.append(
-        operation='/model.3/conv/Conv',
-        platform=get_target_platform(TARGET, 16)
-    )
-
-    quant_setting.dispatching_table.append(
-        operation='/model.4/cv2/conv/Conv',
-        platform=get_target_platform(TARGET, 16)
-    )
-
-    quant_setting.weight_split = True
-    quant_setting.weight_split_setting.method = 'balance'
-    quant_setting.weight_split_setting.value_threshold = 1.5 #1.5
-    quant_setting.weight_split_setting.interested_layers = ['/model.0/conv/Conv',
-                                                            '/model.1/conv/Conv' ]
-    """
 
     quant_ppq_graph = espdl_quantize_onnx(
         onnx_import_file=ONNX_PATH,
@@ -131,4 +107,4 @@ def quant_yolo11n(imgsz):
 
 
 if __name__ == "__main__":
-    quant_yolo11n(imgsz=160)
+    quant_yolo11n_pose(imgsz=160)
